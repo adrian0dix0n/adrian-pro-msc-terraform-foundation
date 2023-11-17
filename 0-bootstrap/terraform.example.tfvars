@@ -14,17 +14,17 @@
  * limitations under the License.
  */
 
-org_id = "REPLACE_ME" # format "000000000000"
+org_id = "324937824298" # format "000000000000"
 
-billing_account = "REPLACE_ME" # format "000000-000000-000000"
+billing_account = "017989-849C25-A18368" # format "000000-000000-000000"
 
-group_org_admins = "REPLACE_ME"
+group_org_admins = "gcp-organization-admins@atdomain.org"
 
-group_billing_admins = "REPLACE_ME"
+group_billing_admins = "gcp-billing-admins@atdomain.org"
 
 # Example of values for the groups
-# group_org_admins = "gcp-organization-admins@example.com"
-# group_billing_admins = "gcp-billing-admins@example.com"
+# group_org_admins = "gcp-organization-admins@atdomain.org"
+# group_billing_admins = "gcp-billing-admins@atdomain.org"
 
 default_region = "us-central1"
 
@@ -37,16 +37,16 @@ default_region = "us-central1"
 
 // Optional - for enabling the automatic groups creation, uncoment the groups
 // variable and update the values with the desired group names
-//groups = {
-//  create_groups = true,
-//  billing_project = "billing-project",
-//  required_groups = {
-//    group_org_admins           = "group_org_admins_local_test@example.com"
-//    group_billing_admins       = "group_billing_admins_local_test@example.com"
-//    billing_data_users         = "billing_data_users_local_test@example.com"
-//    audit_data_users           = "audit_data_users_local_test@example.com"
-//    monitoring_workspace_users = "monitoring_workspace_users_local_test@example.com"
-//  },
+groups = {
+  create_groups = true,
+  billing_project = "billing-project",
+  required_groups = {
+    group_org_admins           = "group_org_admins_local_test@atdomain.org"
+    group_billing_admins       = "group_billing_admins_local_test@atdomain.org"
+    billing_data_users         = "billing_data_users_local_test@atdomain.org"
+    audit_data_users           = "audit_data_users_local_test@atdomain.org"
+    monitoring_workspace_users = "monitoring_workspace_users_local_test@atdomain.org"
+  },
 //  optional_groups = {
 //    gcp_platform_viewer      = "gcp_platform_viewer_local_test@example.com"
 //    gcp_security_reviewer    = "gcp_security_reviewer_local_test@example.com"
