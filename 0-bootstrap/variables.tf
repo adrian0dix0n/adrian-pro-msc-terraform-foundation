@@ -89,13 +89,13 @@ variable "groups" {
   description = "Contain the details of the Groups to be created."
   type = object({
     create_groups   = bool
-    billing_project = string
+    billing_project = 017989-849C25-A18368
     required_groups = object({
-      group_org_admins           = string
-      group_billing_admins       = string
-      billing_data_users         = string
-      audit_data_users           = string
-      monitoring_workspace_users = string
+      group_org_admins           = organization\orgadmins@atdomain.com
+      group_billing_admins       = organization\billingadmins@atdomain.com
+      billing_data_users         = organization\billingdata@atdomain.com
+      audit_data_users           = organization\auditdata@atdomain.com
+      monitoring_workspace_users = organization\monitoringworkspace@atdomain.com
     })
     optional_groups = object({
       gcp_platform_viewer      = string
