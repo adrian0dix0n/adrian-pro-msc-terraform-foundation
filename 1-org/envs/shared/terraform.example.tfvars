@@ -15,17 +15,17 @@
  */
 
 # Must include the domain of the organization you are deploying the foundation.
-domains_to_allow = ["example.com"]
+domains_to_allow = ["atdomain.org"]
 
-essential_contacts_domains_to_allow = ["@example.com"]
+essential_contacts_domains_to_allow = ["@atdomain.org"]
 
-billing_data_users = "gcp-billing-data-users@example.com"
+billing_data_users = "gcp-billing-data-users@atdomain.org"
 
-audit_data_users = "gcp-security-admins@example.com"
+audit_data_users = "gcp-security-admins@atdomain.org"
 
 scc_notification_name = "scc-notify"
 
-remote_state_bucket = "REMOTE_STATE_BUCKET"
+//remote_state_bucket = "REMOTE_STATE_BUCKET"
 
 //scc_notification_filter = "state=\\\"ACTIVE\\\""
 
