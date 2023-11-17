@@ -29,20 +29,20 @@ locals {
   enable_cloudbuild_deploy           = try(data.terraform_remote_state.bootstrap.outputs.jenkins_agent_gce_instance_id, "") == ""
 }
 
-data "terraform_remote_state" "bootstrap" {
-  backend = "gcs"
-
-  config = {
-    bucket = var.remote_state_bucket
-    prefix = "terraform/bootstrap/state"
-  }
-}
-
-data "terraform_remote_state" "org" {
-  backend = "gcs"
-
-  config = {
-    bucket = var.remote_state_bucket
-    prefix = "terraform/org/state"
-  }
-}
+// data "terraform_remote_state" "bootstrap" {
+//  backend = "gcs"
+//
+//  config = {
+//    bucket = var.remote_state_bucket
+//    prefix = "terraform/bootstrap/state"
+//  }
+// }
+//
+// data "terraform_remote_state" "org" {
+//  backend = "gcs"
+//
+//  config = {
+//    bucket = var.remote_state_bucket
+//    prefix = "terraform/org/state"
+//  }
+// }
