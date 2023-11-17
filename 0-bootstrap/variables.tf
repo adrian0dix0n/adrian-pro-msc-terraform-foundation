@@ -89,7 +89,6 @@ variable "groups" {
   description = "Contain the details of the Groups to be created."
   type = object({
     create_groups   = bool
-    billing_project = gentle-operator-405315
     required_groups = object({
       group_org_admins           = organization\orgadmins@atdomain.com
       group_billing_admins       = organization\billingadmins@atdomain.com
