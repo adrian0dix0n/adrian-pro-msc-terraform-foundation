@@ -90,11 +90,11 @@ variable "groups" {
   type = object({
     create_groups   = bool
     required_groups = object({
-      group_org_admins           = orgadmins@atdomain.com
-      group_billing_admins       = billingadmins@atdomain.com
-      billing_data_users         = billingdata@atdomain.com
-      audit_data_users           = auditdata@atdomain.com
-      monitoring_workspace_users = monitoringworkspace@atdomain.com
+      group_org_admins           = orgadmins@atdomain.org
+      group_billing_admins       = billingadmins@atdomain.org
+      billing_data_users         = billingdata@atdomain.org
+      audit_data_users           = auditdata@atdomain.org
+      monitoring_workspace_users = monitoringworkspace@atdomain.org
     })
     optional_groups = object({
       gcp_platform_viewer      = string
