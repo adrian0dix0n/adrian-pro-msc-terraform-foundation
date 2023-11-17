@@ -15,6 +15,6 @@
  */
 
 
-monitoring_workspace_users = "gcp-monitoring-admins@example.com"
+monitoring_workspace_users = "gcp-monitoring-admins@atdomain.org"
 
-remote_state_bucket = "REMOTE_STATE_BUCKET"
+// remote_state_bucket = "REMOTE_STATE_BUCKET"
