@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-terraform {
-  backend "gcs" {
-    bucket = "UPDATE_PROJECTS_BACKEND"
-    prefix = "terraform/projects/business_unit_1/development"
-  }
-}
+// terraform {
+//  backend "gcs" {
+//    bucket = "UPDATE_PROJECTS_BACKEND"
+//    prefix = "terraform/projects/business_unit_1/development"
+//  }
+// }
