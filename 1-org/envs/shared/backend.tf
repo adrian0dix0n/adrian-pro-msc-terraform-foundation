@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-terraform {
-  backend "gcs" {
-    bucket = "UPDATE_ME"
-    prefix = "terraform/org/state"
-  }
-}
+// terraform {
+//  backend "gcs" {
+//    bucket = "UPDATE_ME"
+//    prefix = "terraform/org/state"
+//  }
+// }
