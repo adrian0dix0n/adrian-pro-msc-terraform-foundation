@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-terraform {
-  backend "gcs" {
-    bucket = "UPDATE_ME"
-    prefix = "terraform/networks/envs/shared"
-  }
-}
+// terraform {
+//  backend "gcs" {
+//    bucket = "UPDATE_ME"
+//    prefix = "terraform/networks/envs/shared"
+//  }
+// }
