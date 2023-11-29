@@ -90,7 +90,7 @@ variable "groups" {
   type = object({
     create_groups   = bool
     required_groups = object({
-      group_org_admins           = Org Admins
+      group_org_admins = Org Admins
       group_billing_admins       = Billing Admins
       billing_data_users         = Billing Data
       audit_data_users           = Audit Data
