@@ -156,10 +156,10 @@ variable "groups" {
   }
 
 ## variable "initial_group_config" {
-  description = "Define the group configuration when it is initialized. Valid values are: WITH_INITIAL_OWNER, EMPTY and INITIAL_GROUP_CONFIG_UNSPECIFIED."
-  type        = string
-  default     = "WITH_INITIAL_OWNER"
-}
+##  description = "Define the group configuration when it is initialized. Valid values are: WITH_INITIAL_OWNER, EMPTY and INITIAL_GROUP_CONFIG_UNSPECIFIED."
+##  type        = string
+## default     = "WITH_INITIAL_OWNER"
+##}
 
 /* ----------------------------------------
     Specific to jenkins_bootstrap module
