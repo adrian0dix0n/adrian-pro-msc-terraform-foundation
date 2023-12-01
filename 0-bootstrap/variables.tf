@@ -78,92 +78,92 @@ variable "bucket_prefix" {
 
 variable "bucket_force_destroy" {
   description = "When deleting a bucket, this boolean option will delete all contained objects. If false, Terraform will fail to delete buckets which contain objects."
-  type        = bool
+  ##type        = bool
   default     = false
 }
 
-/* ----------------------------------------
-    Specific to Groups creation
-   ---------------------------------------- */
-variable "groups" {
-  description = "Contain the details of the Groups to be created."
-  type = object({
-    create_groups   = bool
-    required_groups = object({
-      group_org_admins = "Org Admins"
-      group_billing_admins       = "Billing Admins"
-      billing_data_users         = "Billing Data"
-      audit_data_users           = "Audit Data"
-      monitoring_workspace_users = "Monitoring Workspace"
-    })
-    optional_groups = object({
-      gcp_platform_viewer      = string
-      gcp_security_reviewer    = string
-      gcp_network_viewer       = string
-      gcp_scc_admin            = string
-      gcp_global_secrets_admin = string
-      gcp_audit_viewer         = string
-    })
-  })
-  default = {
-    create_groups   = true
-    billing_project = ""
-    required_groups = {
-      group_org_admins           = ""
-      group_billing_admins       = ""
-      billing_data_users         = ""
-      audit_data_users           = ""
-      monitoring_workspace_users = ""
-    }
-    optional_groups = {
-      gcp_platform_viewer      = ""
-      gcp_security_reviewer    = ""
-      gcp_network_viewer       = ""
-      gcp_scc_admin            = ""
-      gcp_global_secrets_admin = ""
-      gcp_audit_viewer         = ""
-    }
-  }
-
-  validation {
-    condition     = var.groups.create_groups == true ? (var.groups.billing_project != "" ? true : false) : true
-    error_message = "A billing_project must be passed to use the automatic group creation."
-  }
-
-  validation {
-    condition     = var.groups.create_groups == true ? (var.groups.required_groups.group_org_admins != "" ? true : false) : true
-    error_message = "The group group_org_admins is invalid, it must be a valid email."
-  }
-
-  validation {
-    condition     = var.groups.create_groups == true ? (var.groups.required_groups.group_billing_admins != "" ? true : false) : true
-    error_message = "The group group_billing_admins is invalid, it must be a valid email."
-  }
-
-  validation {
-    condition     = var.groups.create_groups == true ? (var.groups.required_groups.billing_data_users != "" ? true : false) : true
-    error_message = "The group billing_data_users is invalid, it must be a valid email."
-  }
-
-  validation {
-    condition     = var.groups.create_groups == true ? (var.groups.required_groups.audit_data_users != "" ? true : false) : true
-    error_message = "The group audit_data_users is invalid, it must be a valid email."
-  }
-
-  validation {
-    condition     = var.groups.create_groups == true ? (var.groups.required_groups.monitoring_workspace_users != "" ? true : false) : true
-    error_message = "The group monitoring_workspace_users is invalid, it must be a valid email."
-  }
-
+## /* ----------------------------------------
+##    Specific to Groups creation
+##   ---------------------------------------- */
+## variable "groups" {
+##  description = "Contain the details of the Groups to be created."
+##  type = object({
+##    create_groups   = bool
+##    required_groups = object({
+##      group_org_admins = "Org Admins"
+##      group_billing_admins       = "Billing Admins"
+##      billing_data_users         = "Billing Data"
+##      audit_data_users           = "Audit Data"
+##      monitoring_workspace_users = "Monitoring Workspace"
+##    })
+##    optional_groups = object({
+##      gcp_platform_viewer      = string
+##      gcp_security_reviewer    = string
+##      gcp_network_viewer       = string
+##      gcp_scc_admin            = string
+##      gcp_global_secrets_admin = string
+##      gcp_audit_viewer         = string
+##    })
+##  })
+##  default = {
+##    create_groups   = true
+##    billing_project = ""
+##    required_groups = {
+##      group_org_admins           = ""
+##      group_billing_admins       = ""
+##      billing_data_users         = ""
+##      audit_data_users           = ""
+##      monitoring_workspace_users = ""
+##    }
+##    optional_groups = {
+##      gcp_platform_viewer      = ""
+##      gcp_security_reviewer    = ""
+##      gcp_network_viewer       = ""
+##      gcp_scc_admin            = ""
+##      gcp_global_secrets_admin = ""
+##      gcp_audit_viewer         = ""
+##    }
+##  }
+##
+##  validation {
+##    condition     = var.groups.create_groups == true ? (var.groups.billing_project != "" ? true : false) : true
+##    error_message = "A billing_project must be passed to use the automatic group creation."
+##  }
+##
+##  validation {
+##    condition     = var.groups.create_groups == true ? (var.groups.required_groups.group_org_admins != "" ? true : false) : true
+##    error_message = "The group group_org_admins is invalid, it must be a valid email."
+##  }
+##
+##  validation {
+##    condition     = var.groups.create_groups == true ? (var.groups.required_groups.group_billing_admins != "" ? true : false) : true
+##    error_message = "The group group_billing_admins is invalid, it must be a valid email."
+##  }
+##
+##  validation {
+##    condition     = var.groups.create_groups == true ? (var.groups.required_groups.billing_data_users != "" ? true : false) : true
+##    error_message = "The group billing_data_users is invalid, it must be a valid email."
+##  }
+##
+##  validation {
+##    condition     = var.groups.create_groups == true ? (var.groups.required_groups.audit_data_users != "" ? true : false) : true
+##    error_message = "The group audit_data_users is invalid, it must be a valid email."
+##  }
+##
+##  validation {
+##    condition     = var.groups.create_groups == true ? (var.groups.required_groups.monitoring_workspace_users != "" ? true : false) : true
+##    error_message = "The group monitoring_workspace_users is invalid, it must be a valid email."
+##  }
+##
 ## variable "initial_group_config" {
 ##  description = "Define the group configuration when it is initialized. Valid values are: WITH_INITIAL_OWNER, EMPTY and INITIAL_GROUP_CONFIG_UNSPECIFIED."
 ##  type        = string
 ## default     = "WITH_INITIAL_OWNER"
 ##}
 
-/* ----------------------------------------
-    Specific to jenkins_bootstrap module
-   ---------------------------------------- */
+## /* ----------------------------------------
+##    Specific to jenkins_bootstrap module
+##   ---------------------------------------- */
 
 # # Un-comment the jenkins_bootstrap module and its outputs if you want to use Jenkins instead of Cloud Build
 # variable "jenkins_agent_gce_subnetwork_cidr_range" {
