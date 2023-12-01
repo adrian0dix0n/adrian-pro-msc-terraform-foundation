@@ -37,16 +37,16 @@ default_region = "us-central1"
 
 // Optional - for enabling the automatic groups creation, uncoment the groups
 // variable and update the values with the desired group names
-groups = {
-  create_groups = true,
-  billing_project = "billing-project",
-  required_groups = {
-    group_org_admins           = "group_org_admins_local_test@atdomain.org"
-    group_billing_admins       = "group_billing_admins_local_test@atdomain.org"
-    billing_data_users         = "billing_data_users_local_test@atdomain.org"
-    audit_data_users           = "audit_data_users_local_test@atdomain.org"
-    monitoring_workspace_users = "monitoring_workspace_users_local_test@atdomain.org"
-  },
+//groups = {
+//  create_groups = true,
+//  billing_project = "billing-project",
+//  required_groups = {
+//    group_org_admins           = "group_org_admins_local_test@atdomain.org"
+//    group_billing_admins       = "group_billing_admins_local_test@atdomain.org"
+//    billing_data_users         = "billing_data_users_local_test@atdomain.org"
+//    audit_data_users           = "audit_data_users_local_test@atdomain.org"
+//    monitoring_workspace_users = "monitoring_workspace_users_local_test@atdomain.org"
+//  },
 //  optional_groups = {
 //    gcp_platform_viewer      = "gcp_platform_viewer_local_test@example.com"
 //    gcp_security_reviewer    = "gcp_security_reviewer_local_test@example.com"
